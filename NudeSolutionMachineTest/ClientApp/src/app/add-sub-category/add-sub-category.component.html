@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <h1 class="mb-3">Add Sub Category</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="AddSubCategory()">
+        <div class="mb-3">
+          <label for="CategoryId" class="form-label">Select Category Name</label>
+          <select id="CategoryId"  name="CategoryId" class="form-select" [(ngModel)]="addSubCategory.CategoryId">
+            <option class="dropdown-item" selected value="">--Select Category--</option>
+            <option class="dropdown-item" *ngFor='let option of categories' [value]="option.Id">{{option.Name}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="SubCategoryName" class="form-label">Sub Category Name</label>
+          <input type="text" class="form-control" id="SubCategoryName" 
+                 placeholder="Sub Category Name" name="SubCategoryName" [(ngModel)]="addSubCategory.Name" maxlength="15">
+         
+        </div>
+        <div class="mb-3">
+          <label for="Price" class="form-label">Price $</label>
+          <input type="number" min="1" max="9999" class="form-control"
+                 id="Price" [(ngModel)]="addSubCategory.Total"
+                 placeholder="Price" name="Total">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+</div>
